@@ -24,6 +24,7 @@ public:
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected = false) const;  		//Draw a rectangle
 	void DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo, bool selected = false) const;		//Draw a Line
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected=false) const;  		//Draw a rectangle
+	void DrawRho(Point P1, GfxInfo RhoGfxInfo, bool selected = false) const; //Draw a RHOMBUS
 	void DrawTri(Point P1 , Point P2, Point P3, GfxInfo TriGfxInfo, bool selected = false) const;    //Draw a triangle
 	void DrawElli(Point P1, GfxInfo ElliGfxInfo, bool selected) const; 				// Draw an Ellipse
 	
