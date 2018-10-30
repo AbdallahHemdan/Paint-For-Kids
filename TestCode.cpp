@@ -165,20 +165,51 @@ int main()
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawArea();
 	
-	/// 2.5- Rhombus Test ///
-	/// =================== 
+	/// 2.5- Ellipse Test   ///
+	/// =================== ///
 	pOut->PrintMessage("Drawing an Ellipse, filled/non-filled and Highlighted filled/non-filled,  Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 
 	///TODO: Add code to draw Ellipse in all possible states
+	//2.1.1 - Drawing non - filled rectangle
+		pOut->PrintMessage("Drawing a Ellipse ==> non-filled,  Click one points");
+	pIn->GetPointClicked(P1.x, P1.y);
+
+	gfxInfo.BorderWdth = 5;
+	gfxInfo.DrawClr = BLACK;	//any color for border
+	gfxInfo.isFilled = false;	//Figure is NOT filled
+	pOut->DrawElli(P1, gfxInfo, false);
+
+	// 2.1.2 - Drawing highlighted non-filled Ellipse
+	pOut->PrintMessage("Drawing a Ellipse ==> Highlighted non-filled, Click to Highlight");
+	pIn->GetPointClicked(x, y);	//Wait for any click
+	pOut->DrawElli(P1, gfxInfo, true);
+
+
+	// 2.1.3 - Drawing a filled Ellipse
+	pOut->PrintMessage("Drawing a Ellipse ==> filled,  Click one points");
+	pIn->GetPointClicked(P1.x, P1.y);
+	
+	gfxInfo.BorderWdth = 6;
+	gfxInfo.DrawClr = RED;	//any color for border
+	gfxInfo.FillClr = GREEN;//any color for filling
+	gfxInfo.isFilled = true;//Figure is filled
+	pOut->DrawElli(P1, gfxInfo, false);
+
+
+	// 2.1.4 - Drawing a highlighted filled Ellipse
+	pOut->PrintMessage("Drawing a Ellipse ==> Highlighted filled, Click to Highlight");
+	pIn->GetPointClicked(x, y);	//Wait for any click
+	pOut->DrawElli(P1, gfxInfo, true);
 
 	pOut->PrintMessage("Drawing a Ellipse Test ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
-	pOut->ClearDrawArea();
+	pOut->ClearDrawArea();	
+	
 	
 	///////////////////////////////////////////////////////////////////////////////////
-	// TEST 3: 
-	//			Input Class: Read strings from the user
+	//                                        TEST 3:                                //
+	//			Input Class: Read strings from the user                  //
 	///////////////////////////////////////////////////////////////////////////////////
 	pOut->PrintMessage("TEST3: Now Time to test class Input, Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
