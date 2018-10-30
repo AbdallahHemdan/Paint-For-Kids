@@ -51,6 +51,7 @@ ActionType Input::GetUserAction() const
 
 			switch (ClickedItemOrder)
 			{
+			case ITM_LINE: return DRAW_LINE; 
 			case ITM_RECT: return DRAW_RECT;
 		        case ITM_TRI: return DRAW_TRI;
 			case ITM_EXIT: return EXIT;	
