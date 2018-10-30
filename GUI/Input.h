@@ -5,7 +5,7 @@
 #include "UI_Info.h" 
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 
-class Output;   // forward declaration
+class Output;   // forward declaration of The Class Output
 
 class Input		//The application manager should have a pointer to this class
 {
