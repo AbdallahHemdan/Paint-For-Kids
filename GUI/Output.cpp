@@ -82,6 +82,7 @@ void Output::CreateDrawToolBar() const
 	string MenuItemImages[DRAW_ITM_COUNT];
 	MenuItemImages[ITM_LINE] = "images\\MenuItems\\Menu_Line.jpg"; // Line Image
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
+	MenuItemImages[ITM_TRI] = "images\\MenuItems\\Menu_Tri.jpg";  // Trinagle image
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
@@ -163,6 +164,7 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	
 }
 void Output::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo, bool selected) const
+void Output::DrawTri(Point P1, Point P2, Point P3,GfxInfo TriGfxInfo, bool selected) const //Draw a triangle
 {
 	color DrawingClr;
 	if (selected)
@@ -180,6 +182,22 @@ void Output::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo, bool selected) co
 	else
 		style = FRAME;
 
+		DrawingClr = TriGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (TriGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(TriGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
+
+}
 
 	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
 }
@@ -189,4 +207,3 @@ Output::~Output()
 {
 	delete pWind;
 }
-
