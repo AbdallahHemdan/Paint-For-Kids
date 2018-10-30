@@ -88,6 +88,21 @@ int main()
 	pIn->GetPointClicked(x,y);	//Wait for any click
 
 	///TODO: Add code to draw Line, Normal and Highlighted
+	// 2.1.1 - Drawing non-filled Line
+	pOut->PrintMessage("Drawing a Line ==> non-filled,  Click two points");
+	pIn->GetPointClicked(P1.x, P1.y);
+	pIn->GetPointClicked(P2.x, P2.y);
+
+	gfxInfo.BorderWdth = 5;
+	gfxInfo.DrawClr = BLACK;	//any color for border
+	gfxInfo.isFilled = false;	//Figure is NOT filled
+	pOut->DrawLine(P1, P2, gfxInfo, false);
+
+	// 2.1.2 - Drawing highlighted non-filled line
+	pOut->PrintMessage("Drawing a Line ==> Highlighted non-filled, Click to Highlight");
+	pIn->GetPointClicked(x, y);	//Wait for any click
+	pOut->DrawLine(P1, P2, gfxInfo, true);
+	
 
 	pOut->PrintMessage("Drawing a Line Test ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
