@@ -80,9 +80,10 @@ void Output::CreateDrawToolBar() const
 	//To control the order of these images in the menu, 
 	//reoder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
-	MenuItemImages[ITM_LINE] = "images\\MenuItems\\Menu_Line.jpg"; // Line Image
-	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
-	MenuItemImages[ITM_TRI] = "images\\MenuItems\\Menu_Tri.jpg";  // Trinagle image
+	MenuItemImages[ITM_LINE] = "images\\MenuItems\\Menu_Line.jpg";  // Line Image
+	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";  //Rectangle Image
+	MenuItemImages[ITM_TRI] = "images\\MenuItems\\Menu_Tri.jpg";    //Trinagle Image
+	MenuItemImages[ITM_ELLI] = "images\\MenuItems\\Menu_Elli.jpg";  //Ellipse Image
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
@@ -138,9 +139,10 @@ int Output::getCrntPenWidth() const		//get current pen width
 {	return UI.PenWidth;	}
 
 //======================================================================================//
-//								Figures Drawing Functions								//
+//				Figures Drawing Functions				//
 //======================================================================================//
 
+	// Func To Draw a Rectangle 
 void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) const
 {
 	color DrawingClr;
@@ -163,8 +165,52 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 	
 }
+	//Func to Draw an Ellipse
+void Output::DrawElli(Point P1, GfxInfo ElliGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = ElliGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (ElliGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(ElliGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawEllipse(P1.x - 80, P1.y - 30, P1.x + 80, P1.y + 30 , style);
+}
+	// Func To Draw a Line
 void Output::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo, bool selected) const
-void Output::DrawTri(Point P1, Point P2, Point P3,GfxInfo TriGfxInfo, bool selected) const //Draw a triangle
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor; //Figure should be drawn highlighted
+	else
+		DrawingClr = LineGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (LineGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(LineGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+
+	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+}
+	
+	//Func to Draw a triangle
+void Output::DrawTri(Point P1, Point P2, Point P3,GfxInfo TriGfxInfo, bool selected) const 
 {
 	color DrawingClr;
 	if (selected)
@@ -202,7 +248,8 @@ void Output::DrawTri(Point P1, Point P2, Point P3,GfxInfo TriGfxInfo, bool selec
 	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Output::~Output()
 {
 	delete pWind;
