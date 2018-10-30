@@ -54,6 +54,7 @@ ActionType Input::GetUserAction() const
 			case ITM_LINE: return DRAW_LINE; 
 			case ITM_RECT: return DRAW_RECT;
 		        case ITM_TRI: return DRAW_TRI;
+			case ITM_ELLI: return DRAW_ELLIPSE;		
 			case ITM_EXIT: return EXIT;	
 			
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -78,7 +79,7 @@ ActionType Input::GetUserAction() const
 	}	
 
 }
-/////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 Input::~Input()
 {
