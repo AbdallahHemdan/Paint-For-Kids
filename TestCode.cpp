@@ -1,5 +1,7 @@
 #include "GUI\Input.h"
 #include "GUI\Output.h"
+#include<iostream>
+using namespace std;
 
 //This is a test code to test the Input and Output classes
 
@@ -254,6 +256,11 @@ int main()
 	// 3- print on the status bar "You Entered" then print the string
 	
 	pIn->GetPointClicked(x,y);	//Wait for any click
+
+	pOut->PrintMessage("Hello, Now We Test The ability To Write a string , Please Enter Your Name..");
+	string Get_Name = pIn->GetSrting(pOut);
+	pOut->PrintMessage("Welcome " + Get_Name + " Hemdan To Our Paint For Kids Application Please Press any Key To Continue "); 
+	pIn->GetPointClicked(x, y);
 	pOut->ClearDrawArea();
 
 	///////////////////////////////////////////////////////////////////////////////////
@@ -406,5 +413,3 @@ int main()
 	delete pOut;	
 	return 0;
 }
-
-
