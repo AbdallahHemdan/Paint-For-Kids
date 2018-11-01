@@ -14,14 +14,14 @@ int main()
 	//Starting the test
 	pOut->PrintMessage("This demo is to test input and output classes, Click anywhere to start the test");
 	pIn->GetPointClicked(x,y);	//Wait for any click
-
+	pOut->ClearStatusBar();	//First clear the status bar
 
 	///////////////////////////////////////////////////////////////////////////////////
 	// TEST 1:	
 	//			Create The FULL Tool bar, the drawing area and the status bar	
 	//			This has already been done through the constrcutor of class Output
 	///////////////////////////////////////////////////////////////////////////////////
-
+	
 	pOut->PrintMessage("TEST1: Drawing Tool bar and Status bar, Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 
@@ -36,10 +36,10 @@ int main()
 	pIn->GetPointClicked(x,y);	//Wait for any click
 
 	GfxInfo gfxInfo;//to be used with draw function of the class Ouput
-	Point P1, P2;
+	Point P1, P2, P3;
 
 	/// 2.1- Rectangle Test ///
-	/// =================== 
+	/// =================== /// 
 	pOut->PrintMessage("Drawing a Rectangle, filled/non-filled and Highlighted filled/non-filled,  Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	
@@ -65,7 +65,7 @@ int main()
 	pIn->GetPointClicked(P2.x, P2.y);
 
 	gfxInfo.BorderWdth = 6;
-	gfxInfo.DrawClr = BLUE;	//any color for border
+	gfxInfo.DrawClr = RED;	//any color for border
 	gfxInfo.FillClr = GREEN;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
 	pOut->DrawRect(P1, P2, gfxInfo, false);
@@ -103,11 +103,10 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->DrawLine(P1, P2, gfxInfo, true);
 	
-
 	pOut->PrintMessage("Drawing a Line Test ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawArea();
-
+	
 	/// 2.3- Triangle Test ///
 	/// =================== 
 	pOut->PrintMessage("Drawing a Triangle, filled/non-filled and Highlighted filled/non-filled,  Click to continue");
@@ -154,12 +153,45 @@ int main()
 	pOut->ClearDrawArea();
 	///TODO: Add code to draw Triangle in all possible states
 	
-	/// 2.4- Rhombus Test ///
-	/// =================== 
+	/// 2.4- Rhombus Test    ///
+	/// ===================  ///
 	pOut->PrintMessage("Drawing a Rhombus, filled/non-filled and Highlighted filled/non-filled,  Click to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 
 	///TODO: Add code to draw Rhombus in all possible states
+	// 2.1.1 - Drawing non-filled Rhombus 
+	pOut->PrintMessage("Drawing a Rhombus  ==> non-filled,  Click one points");
+	pIn->GetPointClicked(P1.x, P1.y);
+
+	gfxInfo.BorderWdth = 5;
+	gfxInfo.DrawClr = BLACK;	//any color for border
+	gfxInfo.isFilled = false;	//Figure is NOT filled
+	pOut->DrawRho(P1, gfxInfo, false);
+
+	// 2.1.2 - Drawing highlighted non-filled Rhombus 
+	pOut->PrintMessage("Drawing a Rhombus  ==> Highlighted non-filled, Click to Highlight");
+	pIn->GetPointClicked(x, y);	//Wait for any click
+	pOut->DrawRho(P1, gfxInfo, true);
+
+
+	// 2.1.3 - Drawing a filled Rhombus 
+	pOut->PrintMessage("Drawing a Rhombus  ==> filled,  Click one points");
+	pIn->GetPointClicked(P1.x, P1.y);
+
+	gfxInfo.BorderWdth = 6;
+	gfxInfo.DrawClr = RED;	//any color for border
+	gfxInfo.FillClr = GREEN;//any color for filling
+	gfxInfo.isFilled = true;//Figure is filled
+	pOut->DrawRho(P1, gfxInfo, false);
+
+
+	// 2.1.4 - Drawing a highlighted filled Rhombus 
+	pOut->PrintMessage("Drawing a Rhombus  ==> Highlighted filled, Click to Highlight");
+	pIn->GetPointClicked(x, y);	//Wait for any click
+	pOut->DrawRho(P1, gfxInfo, true);
+
+
+
 
 	pOut->PrintMessage("Drawing a Rhombus Test ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
@@ -204,12 +236,11 @@ int main()
 
 	pOut->PrintMessage("Drawing a Ellipse Test ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
-	pOut->ClearDrawArea();	
-	
+	pOut->ClearDrawArea();
 	
 	///////////////////////////////////////////////////////////////////////////////////
-	//                                        TEST 3:                                //
-	//			Input Class: Read strings from the user                  //
+	// TEST 3: 
+	//			Input Class: Read strings from the user
 	///////////////////////////////////////////////////////////////////////////////////
 	pOut->PrintMessage("TEST3: Now Time to test class Input, Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
@@ -217,10 +248,11 @@ int main()
 	pOut->PrintMessage("Testing Input ability to read strings");
 
 	///TODO: Add code here to 
+
 	// 1- Read a string from the user on the status bar
 	// 2- After reading the stirng clear the status bar
 	// 3- print on the status bar "You Entered" then print the string
-
+	
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawArea();
 
@@ -263,12 +295,40 @@ int main()
 
 		case CHNG_DRAW_CLR:
 				pOut->PrintMessage("Action: Change Figure's drawing color , Click anywhere");
+				pOut->CreateColorsBar();
 				break;
 
 		case CHNG_FILL_CLR:
+				pOut->CreateColorsBar();
 				pOut->PrintMessage("Action: Change Figure's Fill color , Click anywhere");
 				break;
-			
+
+		case WHITE1:
+				pOut->PrintMessage("Action: You selected the white color ");
+				break;
+
+		case BLACK1:
+				pOut->PrintMessage("Action: You selected the Black color ");
+				break;
+
+		case RED1:
+				pOut->PrintMessage("Action: You selected the Red color ");
+				break;
+
+		case GREEN1:
+				pOut->PrintMessage("Action: You selected the Green color ");
+				break;
+
+		case BLUE1:
+				pOut->PrintMessage("Action: You selected the Blue color ");
+				break;
+
+		case BACK:
+				pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar ");
+				pOut->CreateDrawToolBar();
+				break;
+		
+
 		case STATUS:
 				pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
 				break;
@@ -281,16 +341,55 @@ int main()
 				pOut->PrintMessage("Action: a click on empty area in the Design Tool Bar, Click anywhere");
 				break;
 
+		case COPY:
+				pOut->PrintMessage("Action: Select any figure to be Copied");
+				break;
+
+		case CUT:
+				pOut->PrintMessage("Action: Select any figure to be Cut");
+				break;
+
+		case PASTE:
+				pOut->PrintMessage("Action: Select any figure to be Pasted");
+				break;
+
+		case DELETE1: 
+				pOut->PrintMessage("Action: Select any figure to be Deleted");
+				break;
+
 		case TO_DRAW:
 				pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar");
 				pOut->CreateDrawToolBar();
 				break;
 
+		case TO_COLOR : 
+				pOut->PrintMessage("Action: Switch to Color Mode, creating simualtion tool bar");
+				pOut->CreateColorsBar();
+
+				break;
+
 		case TO_PLAY:
+				pOut->CreateToolBar();
 				pOut->PrintMessage("Action: Switch to Play Mode, creating Design tool bar");
 				pOut->CreatePlayToolBar();
 				break;
 
+		case PICK_TYPE:
+				pOut->PrintMessage("Action: Pick Figures by Type");
+				break;
+
+		case PICK_COLOR:
+				pOut->PrintMessage("Action: Pick Figures by Color");
+				break;
+		case SAVE:
+			pOut->PrintMessage("Action:Select any figure to be SAVE ");
+			break;
+		case SAVE_BY_TYPE:
+			pOut->PrintMessage("Action: Select any figure to be SVE BY TYPE");
+			break;
+		case LOAD:
+			pOut->PrintMessage("Action: Load file ");
+			break;
 
 		case EXIT:				
 				break;
