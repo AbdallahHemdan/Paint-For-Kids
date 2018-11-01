@@ -9,8 +9,8 @@ enum ActionType //The actions supported (you can add more if needed)
 	DRAW_LINE,		//Draw Line
 	DRAW_RECT,		//Draw Rectangle
 	DRAW_TRI,		//Draw Triangle
-	DRAW_RHOMBUS,		//Draw Rhombus
-	DRAW_ELLIPSE,		//Draw Ellipse
+	DRAW_RHOMBUS,	//Draw Rhombus
+	DRAW_ELLIPSE,	//Draw Ellipse
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
 	DEL,			//Delete a figure(s)
@@ -22,11 +22,25 @@ enum ActionType //The actions supported (you can add more if needed)
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
-
 	TO_DRAW,		//Switch interface to Draw mode
-	TO_PLAY			//Switch interface to Play mode
-
+	TO_PLAY,			//Switch interface to Play mode
+	TO_COLOR,
 	///TODO: Add more action types (if needed)
+	PICK_TYPE,     // Pick By Type 
+	PICK_COLOR,	   // Pick By Color
+
+	COPY,
+	CUT,
+	PASTE,
+	DELETE1,
+	
+	/////// Action of Color Mode ///////
+	WHITE1,
+	BLACK1,
+	RED1,
+	GREEN1,
+	BLUE1,
+	BACK
 };
 
 struct Point	//To be used for figures points
