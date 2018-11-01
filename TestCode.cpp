@@ -29,9 +29,9 @@ int main()
 
 	
 	///////////////////////////////////////////////////////////////////////////////////
-	// TEST 2:	
-	//			Drawing all the Figures with all possible states: 
-	//			Non-filled, Filled, and highlighted in both cases			
+	// TEST 2:									 //
+	//			Drawing all the Figures with all possible states: 	 //	
+	//			Non-filled, Filled, and highlighted in both cases	 //		
 	///////////////////////////////////////////////////////////////////////////////////
 	
 	pOut->PrintMessage("TEST2: Now we will show that Output class can draw any figure in any state, Click anywhere to continue");
@@ -259,7 +259,7 @@ int main()
 
 	pOut->PrintMessage("Hello, Now We Test The ability To Write a string , Please Enter Your Name..");
 	string Get_Name = pIn->GetSrting(pOut);
-	pOut->PrintMessage("Welcome " + Get_Name + " Hemdan To Our Paint For Kids Application Please Press any Key To Continue "); 
+	pOut->PrintMessage("Welcome " + Get_Name + " To Our Paint For Kids Application Please Press any Key To Continue "); 
 	pIn->GetPointClicked(x, y);
 	pOut->ClearDrawArea();
 
