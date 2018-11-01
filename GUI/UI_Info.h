@@ -10,17 +10,36 @@
 enum GUI_MODE	//Graphical user interface mode
 {
 	MODE_DRAW,	//Drawing mode (startup mode)
-	MODE_PLAY	//Playing mode
+	MODE_PLAY,	//Playing mode
+	MODE_COLOR  // Colors mode
 };
 
 enum DrawMenuItem //The items of the Draw menu (you should add more items)
 {
 	//Note: Items are ordered here as they appear in menu
 	//If you want to change the menu items order, change the order here
-	ITM_LINE,		//Line Item in menu
-	ITM_RECT,		//Recangle item in menu
-	ITM_TRI,                //Triangle item in menu
-	ITM_ELLI, 		//Ellipse item in menu 
+	ITM_LINE,		// Line Item in menu
+	ITM_RECT,  //Recangle item in menu
+	ITM_TRI,   //TRIANGLE item in menu
+	ITM_RHO,   //Rhombus item in menu
+	ITM_ELLI, //Ellipse item in menu 
+	//////////////////////							 Colors							 //////////////////////////////////
+	
+
+	ITM_COPY,
+	ITM_CUT,
+	ITM_PASTE,
+	ITM_DELETE,
+
+	ITM_CHANGECOLOR,
+	ITM_CHANGEFILL,
+	ITM_SAVE,
+	ITM_SAVETYPE,
+	ITM_LOAD,
+
+	ITM_SWITCH,
+	//TODO: Add more items names here
+
 	ITM_EXIT,		//Exit item
 	
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
@@ -31,11 +50,27 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 {
 	//Note: Items are ordered here as they appear in menu
 	//If you want to change the menu items order, change the order here
-	
+	ITM_PICKTYPE,
+	ITM_PICKCOLOR,
+	ITM_SWITCH1,
+	ITM_EXIT1,
 	//TODO: Add more items names here
 
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
+};
+
+enum ColorMenuItem // The items of colors
+{
+	ITM_WHITE,
+	ITM_BLACK,
+	ITM_RED,
+	ITM_GREEN,
+	ITM_BLUE,
+
+	ITM_BACK,
+
+	COLOR_ITM_COUNT
 };
 
 
@@ -48,7 +83,7 @@ struct UI_Info	//User Interface Info.
 {
 	GUI_MODE InterfaceMode;
 	
-	int	width, height,	    //Window width and height
+		int	width, height,	   //Window width and height
 		wx , wy,			//Window starting coordinates
 		StatusBarHeight,	//Status Bar Height
 		ToolBarHeight,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
