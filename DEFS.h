@@ -6,11 +6,15 @@
 //This file contains some global constants and definitions to be used in the project.
 enum ActionType //The actions supported (you can add more if needed)
 {
+	TO_FIGURE,
+	/////////////////           Actions of Figures        ///////////////////
 	DRAW_LINE,		//Draw Line
 	DRAW_RECT,		//Draw Rectangle
 	DRAW_TRI,		//Draw Triangle
 	DRAW_RHOMBUS,	//Draw Rhombus
 	DRAW_ELLIPSE,	//Draw Ellipse
+	BACK1,
+
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
 	DEL,			//Delete a figure(s)
@@ -18,7 +22,6 @@ enum ActionType //The actions supported (you can add more if needed)
 	SAVE_BY_TYPE,	//Save the all the figures that have a specific type
 	LOAD,			//Load a graph from a file
 	EXIT,			//Exit the application
-
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
