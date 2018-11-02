@@ -51,12 +51,8 @@ ActionType Input::GetUserAction() const
 
 			switch (ClickedItemOrder)
 			{
-			case ITM_LINE: return DRAW_LINE; 
-			case ITM_RECT: return DRAW_RECT;
-			case ITM_TRI: return DRAW_TRI;
-			case ITM_RHO: return DRAW_RHOMBUS;
-			case ITM_ELLI: return DRAW_ELLIPSE;
 
+			case ITM_FIGURE: return TO_FIGURE;
 			case ITM_COPY: return COPY;
 			case ITM_CUT: return CUT;
 			case ITM_PASTE: return PASTE;
@@ -136,6 +132,28 @@ ActionType Input::GetUserAction() const
 		//and return the correspoding action
 		//just for now. This should be updated
 	}
+	else if (UI.InterfaceMode == MODE_SHAPE)
+	{
+
+		//[1] If user clicks on the Toolbar
+		if (y >= 0 && y < UI.ToolBarHeight)
+		{
+			//Check whick Menu item was clicked
+			//==> This assumes that menu items are lined up horizontally <==
+			int ClickedItemOrder = (x / UI.MenuItemWidth);
+			//Divide x coord of the point clicked by the menu item width (int division)
+			//If division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
+			switch (ClickedItemOrder)
+			{
+			case ITM_LINE: return DRAW_LINE;
+			case ITM_RECT: return DRAW_RECT;
+			case ITM_TRI:   return DRAW_TRI;
+			case ITM_RHO: return DRAW_RHOMBUS;
+			case ITM_ELLI:  return DRAW_ELLIPSE;
+			case ITM_BACK1:  return BACK1;
+			}
+		}
+        }
 
 }
 
