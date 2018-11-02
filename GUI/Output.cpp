@@ -90,11 +90,7 @@ void Output::CreateDrawToolBar() const
 	//To control the order of these images in the menu, 
 	//reoder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
-	MenuItemImages[ITM_LINE] = "images\\MenuItems\\Menu_Line.jpg";		// Line Image
-	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";      // Rectangle Image  
-	MenuItemImages[ITM_TRI] = "images\\MenuItems\\Menu_Tri.jpg";		// Trinagle Image
-	MenuItemImages[ITM_RHO] = "images\\MenuItems\\Menu_Rho.jpg";		// RHOMBUS Image
-	MenuItemImages[ITM_ELLI] = "images\\MenuItems\\Menu_Elli.jpg";		//Ellipse Image
+	MenuItemImages[ITM_FIGURE] = "images\\MenuItems\\Menu_Shapes.jpg";		// Figure Image
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";		// Exit Image
 
 	MenuItemImages[ITM_COPY] = "images\\MenuItems\\Menu_Copy.jpg";
@@ -179,7 +175,32 @@ void Output::CreateColorsBar() const
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////
+void Output::CreateShapesBar() const
+{
+	CreateToolBar(); // clear the prev tool bar
+	UI.InterfaceMode = MODE_SHAPE;	
 
+
+	string MenuItemImages[SHAPE_ITM_COUNT];
+	MenuItemImages[ITM_LINE] = "images\\MenuItems\\Menu_Line.jpg";		// Line Image
+	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";      // Rectangle Image  
+	MenuItemImages[ITM_TRI] = "images\\MenuItems\\Menu_Tri.jpg";		// Trinagle Image
+	MenuItemImages[ITM_RHO] = "images\\MenuItems\\Menu_Rho.jpg";		// RHOMBUS Image
+	MenuItemImages[ITM_ELLI] = "images\\MenuItems\\Menu_Elli.jpg";		//Ellipse Image
+	MenuItemImages[ITM_BACK1] = "images\\MenuItems\\Menu_Back_2.jpg";     //Back to the tool bar
+
+	for (int i = 0; i<SHAPE_ITM_COUNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+
+
+	//Draw a line under the toolbar
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
 
 void Output::ClearDrawArea() const
@@ -187,6 +208,9 @@ void Output::ClearDrawArea() const
 	pWind->SetPen(UI.BkGrndColor, 1);
 	pWind->SetBrush(UI.BkGrndColor);
 	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
+
+	pWind->DrawRectangle(0, UI.ToolBarHeight + 2, UI.width, UI.height - UI.StatusBarHeight);
+
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 

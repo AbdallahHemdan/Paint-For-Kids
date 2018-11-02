@@ -374,6 +374,11 @@ int main()
 				pOut->CreateColorsBar();
 
 				break;
+		case TO_FIGURE :
+			        pOut->PrintMessage("Action: Switch to Figures Mode, creating simualtion tool bar");
+				pOut->CreateShapesBar();
+
+				break;
 
 		case TO_PLAY:
 				pOut->CreateToolBar();
