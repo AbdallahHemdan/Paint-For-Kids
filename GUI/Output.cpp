@@ -349,7 +349,7 @@ void Output::DrawRho(Point P1,  GfxInfo RhoGfhxInfo, bool selected) const
 	}
 	else
 		style = FRAME;
-	int RhoX[4] = { P1.x, P1.x - 50, P1.x, P1.x + 50 }, RhoY[4] = { P1.y - 50, P1.y, P1.y + 50, P1.y };
+	int RhoX[4] = { P1.x, P1.x - 70, P1.x, P1.x + 70 }, RhoY[4] = { P1.y - 90, P1.y, P1.y + 90, P1.y };
 
 	pWind->DrawPolygon(RhoX, RhoY, 4, style);
 	CreateDrawToolBar();
