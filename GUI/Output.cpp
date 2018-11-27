@@ -90,7 +90,8 @@ void Output::CreateDrawToolBar() const
 	//To control the order of these images in the menu, 
 	//reoder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
-	MenuItemImages[ITM_FIGURE] = "images\\MenuItems\\Menu_Shapes.jpg";		// Figure Image
+
+	MenuItemImages[ITM_FIGURE] = "images\\MenuItems\\Menu_Shapes.jpg";		// Exit Image
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";		// Exit Image
 
 	MenuItemImages[ITM_COPY] = "images\\MenuItems\\Menu_Copy.jpg";
@@ -105,11 +106,18 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\Menu_Save.jpg";
 	MenuItemImages[ITM_SAVETYPE] = "images\\MenuItems\\Menu_SaveAs.jpg";
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\Menu_Load.jpg";
-
-
+	
 	MenuItemImages[ITM_SWITCH] = "images\\MenuItems\\Menu_Switch.jpg";
 	
-
+	//Space to hide the shapes from the tool bar
+	MenuItemImages[ITM_SPACE1] = "images\\MenuItems\\MENU_SPACE.jpg";
+	MenuItemImages[ITM_SPACE2] = "images\\MenuItems\\MENU_SPACE.jpg";
+	MenuItemImages[ITM_SPACE3] = "images\\MenuItems\\MENU_SPACE.jpg";
+	MenuItemImages[ITM_SPACE4] = "images\\MenuItems\\MENU_SPACE.jpg";
+	MenuItemImages[ITM_SPACE5] = "images\\MenuItems\\MENU_SPACE.jpg";
+	MenuItemImages[ITM_SPACE6] = "images\\MenuItems\\MENU_SPACE.jpg";
+	MenuItemImages[ITM_SPACE7] = "images\\MenuItems\\MENU_SPACE.jpg";
+	MenuItemImages[ITM_SPACE8] = "images\\MenuItems\\MENU_SPACE.jpg";
 	//TODO: Prepare images for each menu item and add it to the list
 
 	//Draw menu item one image at a time
@@ -151,7 +159,6 @@ void Output::CreateColorsBar() const
 {
 	CreateToolBar(); // clear the prev tool bar
 	UI.InterfaceMode = MODE_COLOR;
-	// complete this function to show colors bar 
 	
 
 
@@ -161,7 +168,6 @@ void Output::CreateColorsBar() const
 	MenuItemImages[ITM_RED] = "images\\MenuItems\\Menu_Red.jpg";
 	MenuItemImages[ITM_GREEN] = "images\\MenuItems\\Menu_Green.jpg";
 	MenuItemImages[ITM_BLUE] = "images\\MenuItems\\Menu_Blue.jpg";
-
 	MenuItemImages[ITM_BACK] = "images\\MenuItems\\Menu_Back.jpg";
 
 	///TODO: write code to create Color mode menu
@@ -174,6 +180,7 @@ void Output::CreateColorsBar() const
 	pWind->SetPen(RED, 3);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 }
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 void Output::CreateShapesBar() const
@@ -201,16 +208,11 @@ void Output::CreateShapesBar() const
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-
 void Output::ClearDrawArea() const
 {
-	pWind->SetPen(UI.BkGrndColor, 1);
-	pWind->SetBrush(UI.BkGrndColor);
-	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
-
+	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(WHITE);
 	pWind->DrawRectangle(0, UI.ToolBarHeight + 2, UI.width, UI.height - UI.StatusBarHeight);
-
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -261,6 +263,7 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 	CreateDrawToolBar();
 	CreateStatusBar();
+	//pWind->DrawRectangle(12 * 80, 0, 1350, 50);
 }
 void Output::DrawElli(Point P1, GfxInfo ElliGfxInfo, bool selected) const
 {
@@ -349,7 +352,7 @@ void Output::DrawRho(Point P1,  GfxInfo RhoGfhxInfo, bool selected) const
 	}
 	else
 		style = FRAME;
-	int RhoX[4] = { P1.x, P1.x - 70, P1.x, P1.x + 70 }, RhoY[4] = { P1.y - 90, P1.y, P1.y + 90, P1.y };
+	int RhoX[4] = { P1.x, P1.x - 50, P1.x, P1.x + 50 }, RhoY[4] = { P1.y - 50, P1.y, P1.y + 50, P1.y };
 
 	pWind->DrawPolygon(RhoX, RhoY, 4, style);
 	CreateDrawToolBar();
