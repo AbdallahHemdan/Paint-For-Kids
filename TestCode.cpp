@@ -334,7 +334,11 @@ int main()
 				pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar ");
 				pOut->CreateDrawToolBar();
 				break;
-		
+
+		case BACK1: 
+			    pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar ");
+				pOut->CreateDrawToolBar();
+				break;
 
 		case STATUS:
 				pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
@@ -374,8 +378,9 @@ int main()
 				pOut->CreateColorsBar();
 
 				break;
+
 		case TO_FIGURE :
-			        pOut->PrintMessage("Action: Switch to Figures Mode, creating simualtion tool bar");
+			    pOut->PrintMessage("Action: Switch to Figures Mode, creating simualtion tool bar");
 				pOut->CreateShapesBar();
 
 				break;
