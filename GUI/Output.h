@@ -15,7 +15,7 @@ public:
 	void CreateToolBar() const; // creates ToolBar
 	void CreateStatusBar() const;	//creates the status bar
 	void CreateColorsBar() const;   // creates Colors bar
-	void CreateShapesBar() const;  // creates Shapes bar
+	void CreateShapesBar() const;  //creates Shapes bar
 	Input* CreateInput() const; //creates a pointer to the Input object	
 	void ClearStatusBar() const;	//Clears the status bar
 	void ClearDrawArea() const;	//Clears the drawing area
