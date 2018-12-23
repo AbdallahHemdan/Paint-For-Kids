@@ -1,0 +1,67 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: graphics_prj - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "D:\DOCUME~1\Yasser\LOCALS~1\Temp\RSP15.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/graphics_prj.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Mohamed\Faculty\1st Year\Programming Techniques\2008-2009\Project\VC Graphics Library\demo.cpp"
+]
+Creating command line "cl.exe @D:\DOCUME~1\Yasser\LOCALS~1\Temp\RSP15.tmp" 
+Creating temporary file "D:\DOCUME~1\Yasser\LOCALS~1\Temp\RSP16.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib winmm.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/graphics_prj.pdb" /debug /machine:I386 /out:"Debug/graphics_prj.exe" /pdbtype:sept 
+".\Debug\jcomapi.obj"
+".\Debug\jcparam.obj"
+".\Debug\jdapimin.obj"
+".\Debug\jdapistd.obj"
+".\Debug\jdatasrc.obj"
+".\Debug\jdcoefct.obj"
+".\Debug\jdcolor.obj"
+".\Debug\jddctmgr.obj"
+".\Debug\jdhuff.obj"
+".\Debug\jdinput.obj"
+".\Debug\jdmainct.obj"
+".\Debug\jdmarker.obj"
+".\Debug\jdmaster.obj"
+".\Debug\jdmerge.obj"
+".\Debug\jdphuff.obj"
+".\Debug\jdpostct.obj"
+".\Debug\jdsample.obj"
+".\Debug\jdtrans.obj"
+".\Debug\jerror.obj"
+".\Debug\jidctflt.obj"
+".\Debug\jidctfst.obj"
+".\Debug\jidctint.obj"
+".\Debug\jidctred.obj"
+".\Debug\jmemmgr.obj"
+".\Debug\jmemnobs.obj"
+".\Debug\jquant1.obj"
+".\Debug\jquant2.obj"
+".\Debug\jutils.obj"
+".\Debug\auxil.obj"
+".\Debug\CMUgraphics.obj"
+".\Debug\image.obj"
+".\Debug\jpegload.obj"
+".\Debug\keyqueue.obj"
+".\Debug\mousequeue.obj"
+".\Debug\windowinput.obj"
+".\Debug\demo.obj"
+]
+Creating command line "link.exe @D:\DOCUME~1\Yasser\LOCALS~1\Temp\RSP16.tmp"
+<h3>Output Window</h3>
+Compiling...
+demo.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+graphics_prj.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
