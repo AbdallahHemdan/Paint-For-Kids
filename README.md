@@ -1,8 +1,8 @@
 ## OOP-Project-CUFE2022
 Paint-For-Kids Project :heart::fire: fully coded using C++,C as a Project for Object Oriented Course.. 
-
 ---
 # 🚀 Introduction : 
+---
 
  - A Fancy ColorFul Application Is an Effective Way To Teach Kids Some Computer Skills.
 Educational games are another enjoyable way for kids teaching.
