@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Action" Collapsed="true">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <AssociationLine Name="pManager" Type="ApplicationManager">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.185" Y="-0.015" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAACQAAAAAAQAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Actions\Action.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="AddEllipseAction" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAQQAAAQAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Actions\AddEllipseAction.h</FileName>
+      <NewMemberFileName>Actions\AddRectAction.h</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationManager" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <AssociationLine Name="FigList" Type="CFigure">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.36" Y="-0.065" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="pIn" Type="Input" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.625" Y="1.75" />
+        <Point X="5.625" Y="0.781" />
+        <Point X="6" Y="0.781" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.268" Y="-0.411" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="pOut" Type="Output">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.185" Y="0.235" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AYAAoAIAEIQAQBgAAAAAAAAAAAAAAQACAAAAABIAAAA=</HashCode>
+      <FileName>ApplicationManager.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pIn" />
+      <Field Name="pOut" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="FigList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CFigure" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAkgAAAAQAAAAAAAAABAAAAIAAAQAAAAI=</HashCode>
+      <FileName>Figures\CFigure.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CEllipse" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAQAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Figures\CEllipse.h</FileName>
+      <NewMemberFileName>Figures\CRectangle.h</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Input" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <AssociationLine Name="pWind" Type="window">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.14" Y="0.185" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAQAAAAAAEAAEAAAEAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>GUI\Input.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pWind" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Output" Collapsed="true">
+    <Position X="6" Y="3" Width="1.5" />
+    <AssociationLine Name="pWind" Type="window">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.14" Y="0.185" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAALAAAUARAABkAAIAAAgQBAAQACAAEAAIAjAgAA=</HashCode>
+      <FileName>GUI\Output.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pWind" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="window" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>lJITjJAVABAAoEAUADQAkCDGASAH6FKIAEtkaGIGQME=</HashCode>
+      <FileName>CMUgraphicsLib\CMUgraphics.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
