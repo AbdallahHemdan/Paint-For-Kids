@@ -9,7 +9,7 @@
 Educational games are another enjoyable way for kids teaching.
 In this project (Paint for Kids)👦🔥
 
-- We Are Going To Build a Simple Application That Enables Kids Draw Fancy shapes And Also Play Some
+- Our Application is a Simple Application That Enables Kids Draw Fancy shapes And Also Play Some
 Simple Games With Those Shapes.
 
 - Our Application Should Help a Kid to Draw a Number Of Figures, Fill
