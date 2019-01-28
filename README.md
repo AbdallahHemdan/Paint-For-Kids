@@ -16,3 +16,13 @@ Simple Games With Those Shapes.
 Them With Different Colors, Save And Load a Graph, And So On.
 - The Application Provides a Game Playing Mode To Teach Kids 
 How To Differentiate Between Figures Types, Colors …etc.
+
+![test1](https://user-images.githubusercontent.com/40190772/51830239-1325f800-22f8-11e9-9b02-7e1177642eb6.png)
+
+![test2](https://user-images.githubusercontent.com/40190772/51830240-1325f800-22f8-11e9-8171-404b8dee9f93.png)
+
+![test3](https://user-images.githubusercontent.com/40190772/51830249-1ae59c80-22f8-11e9-8228-3475d079b175.png)
+
+
+
+
