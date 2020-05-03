@@ -4,6 +4,8 @@
 
 </div>
 
+<h3 align="center">Paint For Kids</h3>
+
 <div align="center">
 
 [![GitHub contributors](https://img.shields.io/github/contributors/AbdallahHemdan/Paint-For-Kids)](https://github.com/AbdallahHemdan/Paint-For-Kids/contributors)
