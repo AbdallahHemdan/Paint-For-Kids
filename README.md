@@ -1,6 +1,7 @@
 <div align="center">
  
- ![image](https://user-images.githubusercontent.com/40190772/80926367-25160680-8d97-11ea-8682-396563b5ec92.png)
+ ![paint for kids](https://user-images.githubusercontent.com/40190772/83953869-67be7900-a844-11ea-84ff-47300d309d1e.png)
+
 
 </div>
 
